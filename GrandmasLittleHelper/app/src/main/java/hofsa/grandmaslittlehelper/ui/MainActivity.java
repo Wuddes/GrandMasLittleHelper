@@ -1,9 +1,13 @@
-package hofsa.grandmaslittlehelper;
+package hofsa.grandmaslittlehelper.ui;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import hofsa.grandmaslittlehelper.R;
+import hofsa.grandmaslittlehelper.core.Logic;
+import hofsa.grandmaslittlehelper.core.WorkFlow;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +16,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Logic.getInstance().setCurrentActivity(this);
+        WorkFlow.showStartFragment();
     }
 
 
