@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:background="@android:color/holo_green_dark">
 <TextView
-    android:layout_width="wrap_content"
+    android:layout_width="179dp"
     android:layout_height="wrap_content"
     android:text="Willkommen bei GLH"
     android:layout_gravity="center"
-    android:id="@+id/StartFragment_WillkommenText"/>
-<Button
-    android:layout_width="@dimen/activity_button_size_width"
-    android:layout_height="@dimen/activity_button_size_height"
-    android:text="@string/button_text"
-    android:id="@+id/StartFragment_Knopf"/>
-</LinearLayout>
+    android:id="@+id/StartFragment_WillkommenText"
+    android:textStyle="bold|normal|italic"
+    android:layout_weight="0.20"
+    android:layout_marginLeft="781dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="44dp"/>
+
+    <Button
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_text"
+        android:id="@+id/StartFragment_ScanKnopf"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="854dp"
+        android:layout_above="@+id/StartFragment_Knopf"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp"
+        android:background="#fffef5ff"/>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="59dp"
+        android:text="@string/encoder_name"
+        android:id="@+id/StartFragment_Knopf"
+        android:layout_weight="0.01"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="850dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="184dp"
+        android:layout_height="92dp"
+        android:id="@+id/StartFragment_bmp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="776dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/StartFragment_ScanKnopf"
+        android:layout_marginBottom="42dp"/>
+
+</RelativeLayout>

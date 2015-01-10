@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
 import hofsa.grandmaslittlehelper.R;
+import hofsa.grandmaslittlehelper.ui.MedFragment;
 import hofsa.grandmaslittlehelper.ui.StartFragment;
 
 /**
@@ -14,6 +15,12 @@ public class WorkFlow {
         FragmentManager fragmentManager = (Logic.getInstance().getCurrentActivity()).getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.MainActivity_ContentFragment, new StartFragment());
+        fragmentTransaction.commit();
+    }
+    public static void showMedFragment(){
+        FragmentManager fragmentManager = (Logic.getInstance().getCurrentActivity()).getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.MainActivity_ContentFragment, new MedFragment());
         fragmentTransaction.commit();
     }
 }
