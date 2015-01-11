@@ -47,8 +47,32 @@
         android:id="@+id/StartFragment_bmp"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="776dp"
+        android:layout_marginEnd="114dp"
+        android:layout_alignBottom="@+id/StartFragment_Knopf"
+        android:layout_alignParentEnd="true"/>
+    <Button
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:text="Scan den Code"
+        android:id="@+id/StartFragment_Scan"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="854dp"
+        android:layout_marginBottom="75dp"
+        android:background="#fffef5ff"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/StartFragment_ScanKnopf"
-        android:layout_marginBottom="42dp"/>
+        android:layout_alignEnd="@+id/StartFragment_Knopf"/>
+    <TextView
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:text="Scaninhalt"
+        android:layout_gravity="center"
+        android:id="@+id/StartFragment_scanConent"
+        android:textStyle="bold|normal|italic"
+        android:layout_weight="0.20"
+        android:layout_marginLeft="781dp"
+        android:layout_below="@+id/StartFragment_WillkommenText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="93dp"/>
+
 
 </RelativeLayout>

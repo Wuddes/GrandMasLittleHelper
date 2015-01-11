@@ -1,5 +1,6 @@
 package hofsa.grandmaslittlehelper.ui;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -34,8 +35,10 @@ public class StartFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
         super.onCreateView(inflater, container, savedInstanceState);
-        View startFragment = inflater.inflate(R.layout.fragment_startfragment,container,false);
+        final View startFragment = inflater.inflate(R.layout.fragment_startfragment,container,false);
 
       //  TextView textView = (TextView)startFragment.findViewById(R.id.StartFragment_WillkommenText);
         final Button startButton = (Button)startFragment.findViewById(R.id.StartFragment_Knopf);
@@ -53,19 +56,18 @@ public class StartFragment extends Fragment {
                 bild.setImageBitmap(QrLogic.encodeToQrCode("hallo",100,100));
             }
         });
+        final Activity currentActivity;
+        currentActivity = this.getActivity();
+        final Button scan = (Button)startFragment.findViewById(R.id.StartFragment_Scan);
+        scan.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                IntentIntegrator integrator = new IntentIntegrator(currentActivity);
+                integrator.initiateScan();
+            }
+        });
         return startFragment;
     }
-    /*
-    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-        if (result != null) {
-            String contents = result.getContents();
-            if (contents != null) {
 
-            } else {
 
-            }
-        }
-    }
-    */
 }

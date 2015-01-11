@@ -1,9 +1,14 @@
 package hofsa.grandmaslittlehelper.ui;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import hofsa.grandmaslittlehelper.R;
 import hofsa.grandmaslittlehelper.core.Logic;
@@ -41,5 +46,16 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (scanResult != null) {
+            String contents = scanResult.getContents();
+            TextView txt = (TextView)this.findViewById(R.id.StartFragment_scanConent);
+            txt.setText(contents);
+
+        } else {
+         //   WorkFlow.showMedFragment();
+        }
     }
 }
