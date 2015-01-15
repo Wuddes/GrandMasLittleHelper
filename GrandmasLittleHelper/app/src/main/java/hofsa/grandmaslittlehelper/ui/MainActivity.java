@@ -13,18 +13,24 @@ import com.google.zxing.integration.android.IntentResult;
 import hofsa.grandmaslittlehelper.R;
 import hofsa.grandmaslittlehelper.core.Logic;
 import hofsa.grandmaslittlehelper.core.WorkFlow;
+import hofsa.grandmaslittlehelper.core.data.DatabaseWizard;
 
 
 public class MainActivity extends ActionBarActivity {
+    private DatabaseWizard mdbwizard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Logic.getInstance().setCurrentActivity(this);
+        mdbwizard = new DatabaseWizard(this);
         WorkFlow.showStartFragment();
     }
 
+    public DatabaseWizard getDbWizard(){
+        return mdbwizard;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

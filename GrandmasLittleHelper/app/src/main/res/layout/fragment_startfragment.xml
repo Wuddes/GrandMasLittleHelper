@@ -74,5 +74,11 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="93dp"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:id="@+id/email" />
+
 
 </RelativeLayout>

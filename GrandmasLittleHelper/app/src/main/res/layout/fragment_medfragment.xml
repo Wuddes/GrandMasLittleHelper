@@ -11,8 +11,16 @@
     android:layout_gravity="center"
     android:id="@+id/MedFragment_Überschrift"
     />
-<Button
-    android:layout_width="117dp"
+
+    <Button
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+    android:layout_width="169dp"
     android:layout_height="wrap_content"
     android:text="@string/medview_medikament_hinzufügen"
     android:id="@+id/MedFragment_Knopf"

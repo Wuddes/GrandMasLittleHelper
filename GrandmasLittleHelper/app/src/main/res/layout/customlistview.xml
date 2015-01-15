@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left">
+    <ImageView
+        android:id="@+id/customlistviewImage"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:layout_alignParentRight="true"
+        android:paddingRight="4dp"
+        android:contentDescription="image"
+        />
+
+    <TextView
+        android:id="@+id/customlistviewTitle"
+        android:layout_toLeftOf="@id/customlistviewImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:maxLines="1" />
+    <TextView
+        android:id="@+id/customlistviewSubtitle"
+        android:layout_toLeftOf="@id/customlistviewImage" android:layout_below="@id/customlistviewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

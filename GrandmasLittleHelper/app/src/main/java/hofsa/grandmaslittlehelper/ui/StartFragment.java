@@ -66,6 +66,24 @@ public class StartFragment extends Fragment {
                 integrator.initiateScan();
             }
         });
+
+        final Button mailIt = (Button) startFragment.findViewById(R.id.email);
+        mailIt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String adresse = "sam.hoffmann.1991@gmail.com";
+                String adressarray[] = { adresse };
+                String nachricht = "Dies ist der Text der in der Mail erscheint.'\n'Viele Grüße von mir";
+                // Intent anlegen der die Funktion "Action_Send" aufruft.
+                Intent emailversand = new Intent(android.content.Intent.ACTION_SEND);
+                // Fügt der E-Mail Eigenschaften und unseren Text hinzu
+                emailversand.putExtra(android.content.Intent.EXTRA_EMAIL, adressarray);
+                emailversand.putExtra(android.content.Intent.EXTRA_SUBJECT, "Das ist der Betreff");
+                emailversand.setType("plain/text");
+                emailversand.putExtra(android.content.Intent.EXTRA_TEXT, nachricht);
+                startActivity(emailversand);
+            }
+        });
         return startFragment;
     }
 
